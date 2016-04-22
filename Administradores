@@ -1,0 +1,26 @@
+package personal;
+
+public class Administradores extends Empleados {
+	private double hsExtras, hsMes;
+
+	public double getHsExtras() {
+		return hsExtras;
+	}
+
+	public void setHsExtras(double hsExtras) {
+		this.hsExtras = hsExtras;
+	}
+
+	public double getHsMes() {
+		return hsMes;
+	}
+
+	public void setHsMes(double hsMes) {
+		this.hsMes = hsMes;
+	}
+    public double calculaSueldo(){
+    	double total;
+    	total = this.getSueldoBase()*(((this.getHsExtras()*1.5d)+this.getHsMes())/this.getHsMes());
+    	return total;
+    }
+}
