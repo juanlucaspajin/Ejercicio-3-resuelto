@@ -1,0 +1,51 @@
+package personal;
+
+public class Empleados {
+	private String dni,nombre, apellido,eMail;	
+	private double sueldoBase;
+	
+	public String getDni() {
+		return dni;
+	}
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getApellido() {
+		return apellido;
+	}
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	public String geteMail() {
+		return eMail;
+	}
+	public void seteMail(String eMail) {
+		this.eMail = eMail;
+	}
+	public double getSueldoBase() {
+		return sueldoBase;
+	}
+	public void setSueldoBase(double sueldoBase) {
+		this.sueldoBase = sueldoBase;
+	}
+    public void listado(){
+    	System.out.println("DNI: \n"+this.getDni() );
+    	
+    	System.out.println("Nombre: \n"+this.getNombre());
+    	
+    	System.out.println("Apellido: \n"+this.getApellido());
+    	
+    }
+    
+    public double calculaSueldo(){
+    	return 0;
+    }
+
+    
+}
