@@ -1,0 +1,81 @@
+package personal;
+import java.util.*;
+
+public class ProgramaPrincipal {
+
+	public static void main(String[] args) {
+		Empleados[] emp = new Empleados[20];
+		Scanner sc = new Scanner(System.in);
+		int opc; 
+		int opc2;
+		int i=0;
+		int cont=0;
+        System.out.println("¿Cargar empleado? 1-SI 2-NO\n");
+        opc = sc.nextInt();
+        while((opc != 2)&&(i<20)){
+        	System.out.println("3-ADMINISTRADOR 4-VENDEDOR\n");
+        	opc2 = sc.nextInt();
+        	if(opc2 == 3){
+        		Administradores adm = new Administradores();
+        		System.out.println("Ingrese nombre\n");
+        		adm.setNombre(sc.next());
+        		System.out.println("Ingrese apellido\n");
+        		adm.setApellido(sc.next());
+        		System.out.println("Ingrese DNI\n");
+        		adm.setDni(sc.next());
+        		System.out.println("Ingrese e-mail\n");
+        		adm.seteMail(sc.next());
+        		System.out.println("Ingrese sueldo base\n");
+        		adm.setSueldoBase(sc.nextDouble());
+        		System.out.println("Ingrese horas extras\n");
+        		adm.setHsExtras(sc.nextDouble());
+        		System.out.println("Ingrese horas al mes\n");
+        		adm.setHsMes(sc.nextDouble());
+        		emp[i] = adm;
+        		i++;
+        	}else if (opc2 == 4){
+        		Vendedores ven = new Vendedores();
+        		System.out.println("Ingrese nombre\n");
+        		ven.setNombre(sc.next());
+        		System.out.println("Ingrese apellido\n");
+        		ven.setApellido(sc.next());
+        		System.out.println("Ingrese DNI\n");
+        		ven.setDni(sc.next());
+        		System.out.println("Ingrese e-mail\n");
+        		ven.seteMail(sc.next());
+        		System.out.println("Ingrese sueldo base\n");
+        		ven.setSueldoBase(sc.nextDouble());
+        		System.out.println("Ingrese porcentaje de comision\n");
+        		ven.setPorcenComision(sc.nextDouble());
+        		System.out.println("Ingrese total de ventas\n");
+        		ven.setTotalVentas(sc.nextInt());
+        		emp[i] = ven;
+        		i++;
+        	}else{
+        		System.out.println("Error, intente nuevamente\n");
+        	}
+        	cont++;
+        	System.out.println("¿Cargar empleado? 1-SI 2-NO\n");
+            opc = sc.nextInt();
+        }
+       
+        for (int j = 0; j < cont; j++) {
+        	double sueldo = 0; 
+			emp[j].listado();
+			sueldo = emp[j].calculaSueldo();
+			System.out.println("El sueldo es: "+ sueldo);
+			
+			/*if(emp[j] instanceof Administradores){
+				sueldo = (((Administradores) emp[j]).calculaSueldo());
+				System.out.println(" El sueldo es: "+sueldo);
+			}
+			if(emp[j] instanceof Vendedores){
+				sueldo = (((Vendedores) emp[j]).calculaSueldo());
+				System.out.println(" El sueldo es: "+sueldo);
+			}*/
+		} 
+        
+        sc.close();
+	}
+
+}
