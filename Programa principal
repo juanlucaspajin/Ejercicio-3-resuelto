@@ -64,15 +64,6 @@ public class ProgramaPrincipal {
 			emp[j].listado();
 			sueldo = emp[j].calculaSueldo();
 			System.out.println("El sueldo es: "+ sueldo);
-			
-			/*if(emp[j] instanceof Administradores){
-				sueldo = (((Administradores) emp[j]).calculaSueldo());
-				System.out.println(" El sueldo es: "+sueldo);
-			}
-			if(emp[j] instanceof Vendedores){
-				sueldo = (((Vendedores) emp[j]).calculaSueldo());
-				System.out.println(" El sueldo es: "+sueldo);
-			}*/
 		} 
         
         sc.close();
