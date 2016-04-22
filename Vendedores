@@ -1,0 +1,26 @@
+package personal;
+
+public class Vendedores extends Empleados{
+	private double porcenComision;
+	private int totalVentas;
+	
+	public double getPorcenComision() {
+		return porcenComision;
+	}
+	public void setPorcenComision(double porcenComision) {
+		this.porcenComision = porcenComision;
+	}
+	public int getTotalVentas() {
+		return totalVentas;
+	}
+	public void setTotalVentas(int totalVentas) {
+		this.totalVentas = totalVentas;
+	}
+	public double calculaSueldo(){
+		double total;
+    	total = this.getSueldoBase()+(this.getPorcenComision()*this.getTotalVentas()/100);
+    	return total;
+    }
+
+
+}
